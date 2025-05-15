@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만족도 설문조사</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        .radio-option {
+            margin-bottom: 8px;
+        }
+        
+        .rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .rating-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .rating-labels span {
+            font-size: 0.8em;
+            color: #555;
+        }
+        
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #dff0d8;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .rating-labels span {
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>만족도 설문조사</h1>
+    
+    <!-- Formspree를 사용하여 이메일로 응답 수신. YOUR_EMAIL을 실제 이메일로 변경하세요 -->
+    <form id="survey-form" action="https://formspree.io/f/xnndoeww" method="POST">
+        
+        <h2>기본 정보</h2>
+        
+        <div class="form-group">
+            <label>1. 연령</label>
+            <div class="radio-option">
+                <input type="radio" name="age" id="age20" value="20대" required>
+                <label for="age20" style="display: inline;">20대</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="age" id="age30" value="30대">
+                <label for="age30" style="display: inline;">30대</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="age" id="age40" value="40대">
+                <label for="age40" style="display: inline;">40대</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="age" id="age50" value="50대">
+                <label for="age50" style="display: inline;">50대</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="age" id="age60" value="60대 이상">
+                <label for="age60" style="display: inline;">60대 이상</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>2. 교육기관 이용 빈도</label>
+            <div class="radio-option">
+                <input type="radio" name="frequency" id="weekly" value="주간이용" required>
+                <label for="weekly" style="display: inline;">주간이용</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="frequency" id="monthly" value="월간이용">
+                <label for="monthly" style="display: inline;">월간이용</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="frequency" id="other" value="기타이용">
+                <label for="other" style="display: inline;">기타이용</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>3. 교육기관에 참여하게 된 계기</label>
+            <div class="radio-option">
+                <input type="radio" name="reason" id="friend" value="지인소개" required>
+                <label for="friend" style="display: inline;">지인소개</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="reason" id="internet" value="인터넷">
+                <label for="internet" style="display: inline;">인터넷</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="reason" id="promotion" value="기관홍보">
+                <label for="promotion" style="display: inline;">기관홍보</label>
+            </div>
+        </div>
+        
+        <h2>만족도 평가</h2>
+        <p>각 항목에 대해 1점(매우 불만족)에서 5점(매우 만족) 사이로 평가해주세요.</p>
+        
+        <div class="form-group">
+            <label>1. 교육기관 전체적인 서비스에 대해 만족하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction1" id="sat1-1" value="1" required>
+                    <label for="sat1-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction1" id="sat1-2" value="2">
+                    <label for="sat1-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction1" id="sat1-3" value="3">
+                    <label for="sat1-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction1" id="sat1-4" value="4">
+                    <label for="sat1-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction1" id="sat1-5" value="5">
+                    <label for="sat1-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>2. 교육기관에 참여하면서 느낀점이 있으십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction2" id="sat2-1" value="1" required>
+                    <label for="sat2-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction2" id="sat2-2" value="2">
+                    <label for="sat2-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction2" id="sat2-3" value="3">
+                    <label for="sat2-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction2" id="sat2-4" value="4">
+                    <label for="sat2-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction2" id="sat2-5" value="5">
+                    <label for="sat2-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>3. 교육기관의 교육내용은 이해하기 쉬웠습니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction3" id="sat3-1" value="1" required>
+                    <label for="sat3-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction3" id="sat3-2" value="2">
+                    <label for="sat3-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction3" id="sat3-3" value="3">
+                    <label for="sat3-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction3" id="sat3-4" value="4">
+                    <label for="sat3-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction3" id="sat3-5" value="5">
+                    <label for="sat3-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>4. 교직원들의 친절도는 어떻다고 생각하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction4" id="sat4-1" value="1" required>
+                    <label for="sat4-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction4" id="sat4-2" value="2">
+                    <label for="sat4-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction4" id="sat4-3" value="3">
+                    <label for="sat4-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction4" id="sat4-4" value="4">
+                    <label for="sat4-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction4" id="sat4-5" value="5">
+                    <label for="sat4-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>5. 교육내용이 다양하고 흥미롭게 진행된다고 생각하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction5" id="sat5-1" value="1" required>
+                    <label for="sat5-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction5" id="sat5-2" value="2">
+                    <label for="sat5-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction5" id="sat5-3" value="3">
+                    <label for="sat5-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction5" id="sat5-4" value="4">
+                    <label for="sat5-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction5" id="sat5-5" value="5">
+                    <label for="sat5-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>6. 강의실, 화장실, 휴게시설 등의 시설에 대해 만족하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction6" id="sat6-1" value="1" required>
+                    <label for="sat6-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction6" id="sat6-2" value="2">
+                    <label for="sat6-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction6" id="sat6-3" value="3">
+                    <label for="sat6-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction6" id="sat6-4" value="4">
+                    <label for="sat6-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction6" id="sat6-5" value="5">
+                    <label for="sat6-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>7. 교육내용이 실생활에 유익하다고 생각하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction7" id="sat7-1" value="1" required>
+                    <label for="sat7-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction7" id="sat7-2" value="2">
+                    <label for="sat7-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction7" id="sat7-3" value="3">
+                    <label for="sat7-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction7" id="sat7-4" value="4">
+                    <label for="sat7-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction7" id="sat7-5" value="5">
+                    <label for="sat7-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>8. 교직원은 교육생의 의견, 요구사항 등에 대해 만족하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction8" id="sat8-1" value="1" required>
+                    <label for="sat8-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction8" id="sat8-2" value="2">
+                    <label for="sat8-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction8" id="sat8-3" value="3">
+                    <label for="sat8-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction8" id="sat8-4" value="4">
+                    <label for="sat8-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction8" id="sat8-5" value="5">
+                    <label for="sat8-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>9. 교육기관 행사 및 서비스 안내가 잘 전달된다고 생각하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction9" id="sat9-1" value="1" required>
+                    <label for="sat9-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction9" id="sat9-2" value="2">
+                    <label for="sat9-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction9" id="sat9-3" value="3">
+                    <label for="sat9-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction9" id="sat9-4" value="4">
+                    <label for="sat9-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction9" id="sat9-5" value="5">
+                    <label for="sat9-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>10. 교직원은 교육생의 도움에 신속히 대응한다고 생각하십니까?</label>
+            <div class="rating-labels">
+                <span>매우 불만족</span>
+                <span>불만족</span>
+                <span>보통</span>
+                <span>만족</span>
+                <span>매우 만족</span>
+            </div>
+            <div class="rating">
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction10" id="sat10-1" value="1" required>
+                    <label for="sat10-1">1</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction10" id="sat10-2" value="2">
+                    <label for="sat10-2">2</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction10" id="sat10-3" value="3">
+                    <label for="sat10-3">3</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction10" id="sat10-4" value="4">
+                    <label for="sat10-4">4</label>
+                </div>
+                <div class="rating-item">
+                    <input type="radio" name="satisfaction10" id="sat10-5" value="5">
+                    <label for="sat10-5">5</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="feedback">추가 의견이나 개선사항이 있으시면 자유롭게 작성해 주세요.</label>
+            <textarea id="feedback" name="feedback"></textarea>
+        </div>
+        
+        <button type="submit">제출하기</button>
+    </form>
+    
+    <div class="thank-you" id="thank-you-message">
+        <h2>설문에 응해주셔서 감사합니다!</h2>
+        <p>소중한 의견 감사드립니다.</p>
+    </div>
+    
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 폼 데이터 제출
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // 성공 메시지 표시
+                    document.getElementById('survey-form').style.display = 'none';
+                    document.getElementById('thank-you-message').style.display = 'block';
+                    // 페이지 상단으로 스크롤
+                    window.scrollTo(0, 0);
+                } else {
+                    throw new Error('네트워크 응답이 올바르지 않습니다.');
+                }
+            })
+            .catch(error => {
+                console.error('에러:', error);
+                alert('제출 중 오류가 발생했습니다. 다시 시도해 주세요.');
+            });
+        });
+    </script>
+</body>
+</html>
