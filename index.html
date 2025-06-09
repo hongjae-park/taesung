@@ -30,6 +30,13 @@
             padding-bottom: 10px;
         }
         
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
         .form-group {
             margin-bottom: 20px;
             background-color: white;
@@ -110,7 +117,6 @@
 <body>
     <h1>2025 상반기 보호자 간담회 만족도 조사</h1>
     
-    <!-- Formspree를 사용하여 이메일로 응답 수신 -->
     <form id="survey-form" action="https://formspree.io/f/xnndoeww" method="POST">
         
         <h2>Ⅰ. 일반사항</h2>
@@ -184,73 +190,634 @@
         <div class="form-group">
             <label>1. 보호자회의 및 보호자간담회 실시가 필요하다고 생각하십니까? <span class="required">*</span></label>
             <div class="radio-option">
-                <input type="radio" name="question1" id="q1-1" value="매우 그렇다" required>
-                <label for="q1-1" style="display: inline;">① 매우 그렇다</label>
+                <input type="radio" name="meeting_necessity" id="meeting1_1" value="매우 그렇다" required>
+                <label for="meeting1_1" style="display: inline;">① 매우 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question1" id="q1-2" value="그렇다">
-                <label for="q1-2" style="display: inline;">② 그렇다</label>
+                <input type="radio" name="meeting_necessity" id="meeting1_2" value="그렇다">
+                <label for="meeting1_2" style="display: inline;">② 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question1" id="q1-3" value="그렇지 않다">
-                <label for="q1-3" style="display: inline;">③ 그렇지 않다</label>
+                <input type="radio" name="meeting_necessity" id="meeting1_3" value="그렇지 않다">
+                <label for="meeting1_3" style="display: inline;">③ 그렇지 않다</label>
             </div>
         </div>
         
         <div class="form-group">
             <label>2. 보호자 간담회를 통해서 센터 생활을 이해하는 데 도움이 되셨습니까? <span class="required">*</span></label>
             <div class="radio-option">
-                <input type="radio" name="question2" id="q2-1" value="매우 그렇다" required>
-                <label for="q2-1" style="display: inline;">① 매우 그렇다</label>
+                <input type="radio" name="meeting_help" id="meeting2_1" value="매우 그렇다" required>
+                <label for="meeting2_1" style="display: inline;">① 매우 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question2" id="q2-2" value="그렇다">
-                <label for="q2-2" style="display: inline;">② 그렇다</label>
+                <input type="radio" name="meeting_help" id="meeting2_2" value="그렇다">
+                <label for="meeting2_2" style="display: inline;">② 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question2" id="q2-3" value="그렇지 않다">
-                <label for="q2-3" style="display: inline;">③ 그렇지 않다</label>
+                <input type="radio" name="meeting_help" id="meeting2_3" value="그렇지 않다">
+                <label for="meeting2_3" style="display: inline;">③ 그렇지 않다</label>
             </div>
         </div>
         
         <div class="form-group">
             <label>3. 보호자간담회 내용구성이 적당하다고 생각하십니까? <span class="required">*</span></label>
             <div class="radio-option">
-                <input type="radio" name="question3" id="q3-1" value="매우 그렇다" required>
-                <label for="q3-1" style="display: inline;">① 매우 그렇다</label>
+                <input type="radio" name="meeting_content" id="meeting3_1" value="매우 그렇다" required>
+                <label for="meeting3_1" style="display: inline;">① 매우 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question3" id="q3-2" value="그렇다">
-                <label for="q3-2" style="display: inline;">② 그렇다</label>
+                <input type="radio" name="meeting_content" id="meeting3_2" value="그렇다">
+                <label for="meeting3_2" style="display: inline;">② 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question3" id="q3-3" value="그렇지 않다">
-                <label for="q3-3" style="display: inline;">③ 그렇지 않다</label>
+                <input type="radio" name="meeting_content" id="meeting3_3" value="그렇지 않다">
+                <label for="meeting3_3" style="display: inline;">③ 그렇지 않다</label>
             </div>
         </div>
         
         <div class="form-group">
             <label>4. 다음에 보호자간담회를 실시한다면 참석하시겠습니까? <span class="required">*</span></label>
             <div class="radio-option">
-                <input type="radio" name="question4" id="q4-1" value="매우 그렇다" required>
-                <label for="q4-1" style="display: inline;">① 매우 그렇다</label>
+                <input type="radio" name="meeting_participation" id="meeting4_1" value="매우 그렇다" required>
+                <label for="meeting4_1" style="display: inline;">① 매우 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question4" id="q4-2" value="그렇다">
-                <label for="q4-2" style="display: inline;">② 그렇다</label>
+                <input type="radio" name="meeting_participation" id="meeting4_2" value="그렇다">
+                <label for="meeting4_2" style="display: inline;">② 그렇다</label>
             </div>
             <div class="radio-option">
-                <input type="radio" name="question4" id="q4-3" value="그렇지 않다">
-                <label for="q4-3" style="display: inline;">③ 그렇지 않다</label>
+                <input type="radio" name="meeting_participation" id="meeting4_3" value="그렇지 않다">
+                <label for="meeting4_3" style="display: inline;">③ 그렇지 않다</label>
             </div>
         </div>
         
         <h2>Ⅲ. 건의사항</h2>
         
         <div class="form-group">
-            <label for="feedback">기타 건의사항이나 의견이 있으시면 자유롭게 작성해 주세요.</label>
-            <textarea id="feedback" name="feedback"></textarea>
-        </div>유롭게 작성해주세요..."></textarea>
+            <label for="suggestions">기타 건의사항이나 의견이 있으시면 자유롭게 작성해 주세요.</label>
+            <textarea id="suggestions" name="suggestions"></textarea>
+        </div>
+        
+        <h2>Ⅳ. 수급자(보호자) 만족도 조사 설문지</h2>
+        
+        <h3>- 서비스계약</h3>
+        
+        <div class="form-group">
+            <label>1. 계약서 작성 시 중요한 사항에 대해 충분히 설명해주었다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q1" id="service1_1" value="매우 그렇다" required>
+                <label for="service1_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q1" id="service1_2" value="그렇다">
+                <label for="service1_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q1" id="service1_3" value="보통이다">
+                <label for="service1_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q1" id="service1_4" value="그렇지않다">
+                <label for="service1_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q1" id="service1_5" value="매우 그렇지않다">
+                <label for="service1_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>2. 계약서 작성 시 직원의 설명은 알기 쉬웠다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q2" id="service2_1" value="매우 그렇다" required>
+                <label for="service2_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q2" id="service2_2" value="그렇다">
+                <label for="service2_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q2" id="service2_3" value="보통이다">
+                <label for="service2_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q2" id="service2_4" value="그렇지않다">
+                <label for="service2_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q2" id="service2_5" value="매우 그렇지않다">
+                <label for="service2_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>3. 계약 시 귀하의 의견이 충분히 반영되었다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q3" id="service3_1" value="매우 그렇다" required>
+                <label for="service3_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q3" id="service3_2" value="그렇다">
+                <label for="service3_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q3" id="service3_3" value="보통이다">
+                <label for="service3_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q3" id="service3_4" value="그렇지않다">
+                <label for="service3_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q3" id="service3_5" value="매우 그렇지않다">
+                <label for="service3_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <h3>- 서비스 내용 및 과정</h3>
+        
+        <div class="form-group">
+            <label>4. 시설에서 제공되는 식단은 적절하다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q4" id="service4_1" value="매우 그렇다" required>
+                <label for="service4_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q4" id="service4_2" value="그렇다">
+                <label for="service4_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q4" id="service4_3" value="보통이다">
+                <label for="service4_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q4" id="service4_4" value="그렇지않다">
+                <label for="service4_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q4" id="service4_5" value="매우 그렇지않다">
+                <label for="service4_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>5. 직원이 어르신이 식사를 잘 하도록 도와 준다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q5" id="service5_1" value="매우 그렇다" required>
+                <label for="service5_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q5" id="service5_2" value="그렇다">
+                <label for="service5_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q5" id="service5_3" value="보통이다">
+                <label for="service5_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q5" id="service5_4" value="그렇지않다">
+                <label for="service5_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q5" id="service5_5" value="매우 그렇지않다">
+                <label for="service5_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>6. 세수하거나 양치, 목욕, 머리감는 것을 도와주는 것이 마음에 든다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q6" id="service6_1" value="매우 그렇다" required>
+                <label for="service6_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q6" id="service6_2" value="그렇다">
+                <label for="service6_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q6" id="service6_3" value="보통이다">
+                <label for="service6_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q6" id="service6_4" value="그렇지않다">
+                <label for="service6_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q6" id="service6_5" value="매우 그렇지않다">
+                <label for="service6_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>7. 어르신이 침상 휴식을 취하기에 적절하다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q7" id="service7_1" value="매우 그렇다" required>
+                <label for="service7_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q7" id="service7_2" value="그렇다">
+                <label for="service7_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q7" id="service7_3" value="보통이다">
+                <label for="service7_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q7" id="service7_4" value="그렇지않다">
+                <label for="service7_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q7" id="service7_5" value="매우 그렇지않다">
+                <label for="service7_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>8. 직원은 어르신의 화장실 이용, 기저귀 교체를 잘 도와 준다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q8" id="service8_1" value="매우 그렇다" required>
+                <label for="service8_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q8" id="service8_2" value="그렇다">
+                <label for="service8_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q8" id="service8_3" value="보통이다">
+                <label for="service8_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q8" id="service8_4" value="그렇지않다">
+                <label for="service8_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q8" id="service8_5" value="매우 그렇지않다">
+                <label for="service8_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>9. 서비스 제공 시 개인의 프라이버시 및 자존심을 존중해준다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q9" id="service9_1" value="매우 그렇다" required>
+                <label for="service9_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q9" id="service9_2" value="그렇다">
+                <label for="service9_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q9" id="service9_3" value="보통이다">
+                <label for="service9_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q9" id="service9_4" value="그렇지않다">
+                <label for="service9_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q9" id="service9_5" value="매우 그렇지않다">
+                <label for="service9_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>10. 직원은 어르신이 원하는 서비스를 원할 때 제공해준다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q10" id="service10_1" value="매우 그렇다" required>
+                <label for="service10_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q10" id="service10_2" value="그렇다">
+                <label for="service10_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q10" id="service10_3" value="보통이다">
+                <label for="service10_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q10" id="service10_4" value="그렇지않다">
+                <label for="service10_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q10" id="service10_5" value="매우 그렇지않다">
+                <label for="service10_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>11. 시설에서 제공하는 재활, 여가 등의 프로그램은 적절하다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q11" id="service11_1" value="매우 그렇다" required>
+                <label for="service11_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q11" id="service11_2" value="그렇다">
+                <label for="service11_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q11" id="service11_3" value="보통이다">
+                <label for="service11_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q11" id="service11_4" value="그렇지않다">
+                <label for="service11_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q11" id="service11_5" value="매우 그렇지않다">
+                <label for="service11_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>12. 건강상태가 좋지 않거나 예상치 못한 사고가 났을 때 적절한 의료적 처치가 이루어졌다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q12" id="service12_1" value="매우 그렇다" required>
+                <label for="service12_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q12" id="service12_2" value="그렇다">
+                <label for="service12_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q12" id="service12_3" value="보통이다">
+                <label for="service12_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q12" id="service12_4" value="그렇지않다">
+                <label for="service12_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q12" id="service12_5" value="매우 그렇지않다">
+                <label for="service12_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>13. 건강상태가 좋지 않거나 예상치 못한 사고가 났을 때 가족 등에게 연락을 해 주었다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q13" id="service13_1" value="매우 그렇다" required>
+                <label for="service13_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q13" id="service13_2" value="그렇다">
+                <label for="service13_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q13" id="service13_3" value="보통이다">
+                <label for="service13_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q13" id="service13_4" value="그렇지않다">
+                <label for="service13_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q13" id="service13_5" value="매우 그렇지않다">
+                <label for="service13_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>14. 서비스를 제공하는 직원(사회복지사, 간호사, 요양보호사 등)의 태도는 만족스럽다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q14" id="service14_1" value="매우 그렇다" required>
+                <label for="service14_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q14" id="service14_2" value="그렇다">
+                <label for="service14_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q14" id="service14_3" value="보통이다">
+                <label for="service14_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q14" id="service14_4" value="그렇지않다">
+                <label for="service14_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q14" id="service14_5" value="매우 그렇지않다">
+                <label for="service14_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>15. 서비스를 제공하는 직원(사회복지사, 간호사, 요양보호사 등)은 전문가로서 충분한 능력을 갖추고 있다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q15" id="service15_1" value="매우 그렇다" required>
+                <label for="service15_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q15" id="service15_2" value="그렇다">
+                <label for="service15_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q15" id="service15_3" value="보통이다">
+                <label for="service15_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q15" id="service15_4" value="그렇지않다">
+                <label for="service15_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q15" id="service15_5" value="매우 그렇지않다">
+                <label for="service15_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>16. 시설은 어르신이 생활하기에 깨끗하고 위생적이다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q16" id="service16_1" value="매우 그렇다" required>
+                <label for="service16_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q16" id="service16_2" value="그렇다">
+                <label for="service16_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q16" id="service16_3" value="보통이다">
+                <label for="service16_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q16" id="service16_4" value="그렇지않다">
+                <label for="service16_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q16" id="service16_5" value="매우 그렇지않다">
+                <label for="service16_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>17. 시설의 냉·난방 온도는 어르신이 생활하기에 적절하다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q17" id="service17_1" value="매우 그렇다" required>
+                <label for="service17_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q17" id="service17_2" value="그렇다">
+                <label for="service17_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q17" id="service17_3" value="보통이다">
+                <label for="service17_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q17" id="service17_4" value="그렇지않다">
+                <label for="service17_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q17" id="service17_5" value="매우 그렇지않다">
+                <label for="service17_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>18. 시설은 어르신이 생활하기에 안전하다.<br>(시설내부의 밝기, 안전손잡이, 비상구, 욕실의 미끄럼방지 등) <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q18" id="service18_1" value="매우 그렇다" required>
+                <label for="service18_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q18" id="service18_2" value="그렇다">
+                <label for="service18_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q18" id="service18_3" value="보통이다">
+                <label for="service18_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q18" id="service18_4" value="그렇지않다">
+                <label for="service18_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q18" id="service18_5" value="매우 그렇지않다">
+                <label for="service18_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <h3>- 불만 및 희망사항 반영 여부</h3>
+        
+        <div class="form-group">
+            <label>19. 현재의 시설을 앞으로도 계속 이용하고 싶다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q19" id="service19_1" value="매우 그렇다" required>
+                <label for="service19_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q19" id="service19_2" value="그렇다">
+                <label for="service19_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q19" id="service19_3" value="보통이다">
+                <label for="service19_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q19" id="service19_4" value="그렇지않다">
+                <label for="service19_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q19" id="service19_5" value="매우 그렇지않다">
+                <label for="service19_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>20. 어르신이 무엇을 원하고 필요로 하는지에 대해 직원(요양보호사, 간호사, 사회복지사)은 자주 물어보고 신경 써준다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q20" id="service20_1" value="매우 그렇다" required>
+                <label for="service20_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q20" id="service20_2" value="그렇다">
+                <label for="service20_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q20" id="service20_3" value="보통이다">
+                <label for="service20_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q20" id="service20_4" value="그렇지않다">
+                <label for="service20_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q20" id="service20_5" value="매우 그렇지않다">
+                <label for="service20_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>21. 불만 사항이나 요구사항을 직원(요양보호사, 간호사, 사회복지사)에게 부담 없이 말할 수 있다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q21" id="service21_1" value="매우 그렇다" required>
+                <label for="service21_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q21" id="service21_2" value="그렇다">
+                <label for="service21_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q21" id="service21_3" value="보통이다">
+                <label for="service21_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q21" id="service21_4" value="그렇지않다">
+                <label for="service21_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q21" id="service21_5" value="매우 그렇지않다">
+                <label for="service21_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>22. 요구사항은 적절하게 반영해준다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q22" id="service22_1" value="매우 그렇다" required>
+                <label for="service22_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q22" id="service22_2" value="그렇다">
+                <label for="service22_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q22" id="service22_3" value="보통이다">
+                <label for="service22_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q22" id="service22_4" value="그렇지않다">
+                <label for="service22_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q22" id="service22_5" value="매우 그렇지않다">
+                <label for="service22_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
+        </div>
+        
+        <h3>- 전반적 만족도</h3>
+        
+        <div class="form-group">
+            <label>23. 이용하고 있는 시설 서비스에 전반적으로 만족한다. <span class="required">*</span></label>
+            <div class="radio-option">
+                <input type="radio" name="service_q23" id="service23_1" value="매우 그렇다" required>
+                <label for="service23_1" style="display: inline;">① 매우 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q23" id="service23_2" value="그렇다">
+                <label for="service23_2" style="display: inline;">② 그렇다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q23" id="service23_3" value="보통이다">
+                <label for="service23_3" style="display: inline;">③ 보통이다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q23" id="service23_4" value="그렇지않다">
+                <label for="service23_4" style="display: inline;">④ 그렇지않다</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="service_q23" id="service23_5" value="매우 그렇지않다">
+                <label for="service23_5" style="display: inline;">⑤ 매우 그렇지않다</label>
+            </div>
         </div>
         
         <button type="submit">제출하기</button>
